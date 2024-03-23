@@ -5,11 +5,24 @@
 
 void cont_shell(void);
 
+/**
+ * main - Entry point of the program 
+ * Return: 0 on success
+ */
+
 int main(void)
 {
 	cont_shell();
 	return (0);
 }
+
+/**
+ * exec_commd - This function implements a command after getting some
+ * inputs
+ * @commd: Input Value
+ * @args: Input Value
+ * Return: Nothing
+ */
 
 void exec_commd(char *commd, char **args)
 {
@@ -38,6 +51,12 @@ void exec_commd(char *commd, char **args)
 		wait(NULL);
 	}
 }
+/**
+ * prse_exec_commd - This function parses the previously executed
+ * command
+ * @value: Input Value
+ * Return: Nothing
+ */
 
 void prse_exec_commd(char *value)
 {
@@ -72,6 +91,10 @@ void prse_exec_commd(char *value)
 	free(value_cpy);
 }
 
+/**
+ * cont_shell - Function that implements a shell prompt description
+ * Return: Nothing
+ */
 
 void cont_shell(void)
 {
