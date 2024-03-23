@@ -6,7 +6,7 @@
 void cont_shell(void);
 
 /**
- * main - Entry point of the program 
+ * main - Entry point of the program
  * Return: 0 on success
  */
 
