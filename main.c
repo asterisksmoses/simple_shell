@@ -86,12 +86,15 @@ void prse_exec_commd(char *value)
 		return;
 	}
 	commd = tkn;
+
 	while ((tkn = strtok_r(NULL, " \t\n", &ptr)) != NULL)
 	{
 		args[args_indx++] = tkn;
 	}
 	args[args_indx] = NULL;
+
 	exec_commd(commd, args);
+
 	free(value_cpy);
 }
 
