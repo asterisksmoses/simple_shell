@@ -10,5 +10,6 @@
 void cont_shell(void);
 void exec_commd(char *commd, char **args);
 void prse_exec_commd(char *value);
+extern char **environ;
 
 #endif

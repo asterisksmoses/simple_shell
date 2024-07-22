@@ -5,6 +5,8 @@
 #include <sys/wait.h>
 #include <unistd.h>
 
+extern char **environ;
+
 void exec_commd(char *commd, char **args);
 void prse_exec_commd(char *value);
 void cont_shell(void);
@@ -46,7 +48,7 @@ void exec_commd(char *commd, char **args)
 		}
 		if (execve(commd, args, NULL) == -1)
 		{
-			perror("execve");
+			perror("./simple_shell");
 			exit(EXIT_FAILURE);
 		}
 	}
@@ -131,8 +133,7 @@ void cont_shell(void)
 		{
 			line_p[xy - 1] = '\0';
 		}
-		if (strcmp(line_p, "exit") == 0 || strcmp(line_p, "quit")
-				== 0)
+		if (strcmp(line_p, "quit") == 0)
 		{
 			printf("Ending Shell Session...\n");
 			exit_sh = 1;
